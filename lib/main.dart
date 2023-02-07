@@ -31,4 +31,3 @@ class MyHomePage extends StatelessWidget {
     return redCell_layout();
   }
 }
-//fire base setup
