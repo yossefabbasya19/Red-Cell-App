@@ -175,7 +175,7 @@ class home_screen extends StatelessWidget {
                                     spreadRadius: 4,
                                     blurRadius: 7,
                                   ),
-                                ]),
+                                ],),
                             child: Padding(
                               padding: const EdgeInsets.all(10.0),
                               child: SvgPicture.asset(
