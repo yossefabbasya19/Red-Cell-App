@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class news_screen extends StatelessWidget {
-  const news_screen({super.key});
+class NewsScreen extends StatelessWidget {
+  const NewsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
