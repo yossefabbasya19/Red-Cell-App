@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "302354351576",
+    "project_id": "red-cell-app",
+    "storage_bucket": "red-cell-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:302354351576:android:5663e5289ecd3cfedd9ead",
+        "android_client_info": {
+          "package_name": "com.example.red_cell_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "302354351576-du037n5ruu9rdgd3nnrat4speu1d1ekc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.red_cell_app",
+            "certificate_hash": "724c5ba01e8b6ab6ed9be14ffa98ece755dc6903"
+          }
+        },
+        {
+          "client_id": "302354351576-etl3dib4ps5s6ct0i17oek9vqtqd3gjp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyARgdW4Ydwf6FAILh9Lup6QlJ1EQAn9d98"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "302354351576-etl3dib4ps5s6ct0i17oek9vqtqd3gjp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
