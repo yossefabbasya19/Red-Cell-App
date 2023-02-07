@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:red_cell_app/layout/redCell_layout.dart';
 import 'modules/home/home_screen.dart';
 
 
@@ -27,7 +28,7 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return home_screen();
+    return redCell_layout();
   }
 }
 //fire base setup

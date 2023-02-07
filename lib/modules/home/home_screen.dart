@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-
-class home_screen extends StatelessWidget {
-  const home_screen({super.key});
+class HomeScreen extends StatelessWidget {
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       body: Center(
         child: Column(
           children: [
@@ -30,7 +28,10 @@ class home_screen extends StatelessWidget {
                         ),
                       ),
                       const Spacer(),
-                      SvgPicture.asset("assets/icons/Notice_20.svg"),
+                      ImageIcon(
+                        AssetImage("assets/images/Notice_20.png"),
+                        color: Colors.white,
+                      ),
                     ],
                   ),
                 ),
@@ -157,30 +158,30 @@ class home_screen extends StatelessWidget {
                           right: 10.0, left: 10.0, bottom: 15.0),
                       child: Row(
                         children: [
-                          SvgPicture.asset(
-                            "assets/icons/Group 1006.svg",
+                          ImageIcon(
+                            AssetImage("assets/images/Group 1006.png"),
                             color: HexColor("#E24E59"),
                           ),
                           Text("  Itay El Barud - Beheira - Egypt"),
                           Spacer(),
                           Container(
                             decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.all(
-                                  Radius.circular(12),
+                              color: Colors.white,
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(12),
+                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  spreadRadius: 4,
+                                  blurRadius: 7,
                                 ),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: Colors.grey.withOpacity(0.5),
-                                    spreadRadius: 4,
-                                    blurRadius: 7,
-                                  ),
-                                ],),
+                              ],
+                            ),
                             child: Padding(
                               padding: const EdgeInsets.all(10.0),
-                              child: SvgPicture.asset(
-                                "assets/icons/feed_share.svg",
-                                color: Colors.black,
+                              child: ImageIcon(
+                                AssetImage("assets/images/feed_share.png"),
                               ),
                             ),
                           ),
