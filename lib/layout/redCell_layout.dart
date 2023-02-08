@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:red_cell_app/shared/cubit/cubit/red_cell_cubit.dart';
-import 'package:red_cell_app/shared/cubit/cubit/red_cell_state.dart';
+import 'package:red_cell_app/shared/cubit/red_cell_cubit.dart';
+import 'package:red_cell_app/shared/cubit/red_cell_state.dart';
 
 class redCell_layout extends StatelessWidget {
   const redCell_layout({super.key});
@@ -20,7 +20,6 @@ class redCell_layout extends StatelessWidget {
           return Scaffold(
             bottomNavigationBar: BottomNavigationBar(
               type: BottomNavigationBarType.fixed,
-              //backgroundColor: Colors.black,
               unselectedItemColor:Colors.black,
               selectedItemColor: HexColor("#E24E59"),
               currentIndex: cubit.currentIndex,
@@ -58,3 +57,4 @@ class redCell_layout extends StatelessWidget {
     );
   }
 }
+///////
