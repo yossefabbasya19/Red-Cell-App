@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:red_cell_app/modules/login/login.dart';
 import 'package:red_cell_app/modules/signUp/signUp_screen.dart';
 import 'modules/home/home_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -32,7 +33,7 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return singUp();
+    return login();
   }
 }
 //fire base setup
