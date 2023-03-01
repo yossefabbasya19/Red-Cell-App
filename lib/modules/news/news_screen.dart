@@ -3,6 +3,10 @@ import 'package:red_cell_app/modules/news/news_search.dart';
 import 'package:red_cell_app/modules/news/tabs_news.dart';
 
 class NewsScreen extends StatelessWidget {
+
+  const NewsScreen({super.key});
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

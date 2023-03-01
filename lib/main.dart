@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+
 import 'package:red_cell_app/modules/news/news_screen.dart';
 import 'modules/home/home_screen.dart';
+
+import 'package:red_cell_app/layout/redCell_layout.dart';
+
+
 
 
 void main() {
@@ -28,7 +33,10 @@ class MyHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return NewsScreen();
+
+    return redCell_layout();
+
   }
 }
-//fire base setup
