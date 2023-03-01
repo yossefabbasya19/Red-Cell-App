@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+
+import 'package:red_cell_app/modules/news/news_screen.dart';
+import 'modules/home/home_screen.dart';
+
 import 'package:red_cell_app/layout/redCell_layout.dart';
+
 
 
 
@@ -17,17 +22,21 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(),
+      home:  MyHomePage(),
       debugShowCheckedModeBanner: false,
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key});
+
 
   @override
   Widget build(BuildContext context) {
+
+    return NewsScreen();
+
     return redCell_layout();
+
   }
 }
