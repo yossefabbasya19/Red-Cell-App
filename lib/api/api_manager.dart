@@ -3,12 +3,9 @@ import 'package:http/http.dart' as http;
 
 import 'module/news_response.dart';
 
-
 class ApiManager {
   static String baseUrl = "https://newsapi.org/v2";
   static String apiKey = "132de28b0fe546609a6e9ca8c097cda3";
-
-
 
   static Future<NewsResponse> getNews({int? page}) async {
     var response = await http.get(Uri.parse(
@@ -17,6 +14,7 @@ class ApiManager {
     NewsResponse newsResponse = NewsResponse.fromJson(json);
     return newsResponse;
   }
+
   static Future<NewsResponse> getNews2({String? keywordSearch}) async {
     var response = await http.get(Uri.parse(
         "https://newsapi.org/v2/everything?apiKey=$apiKey&q=$keywordSearch"));
@@ -24,5 +22,4 @@ class ApiManager {
     NewsResponse newsResponse = NewsResponse.fromJson(json);
     return newsResponse;
   }
-
 }

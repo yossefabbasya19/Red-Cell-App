@@ -25,7 +25,7 @@ class NewWidget extends StatelessWidget {
               blurRadius: 7,
             ),
           ]),
-      padding: EdgeInsets.only(left: 20, top: 15, right: 10, bottom: 8),
+      padding: EdgeInsets.only(left: 20, top: 0, right: 10, bottom: 8),
       margin: EdgeInsets.all(8),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,

@@ -45,13 +45,18 @@ class _TabsNewsState extends State<TabsNews> {
             newsList = snapShot.data?.articles ?? [];
 
             return ListView.separated(
-                controller: scrollController,
-                itemCount: newsList.length,
-                itemBuilder: (context, index) {
-                  return NewWidget(newsList[index]);
-                }, separatorBuilder: (BuildContext context, int index) {
-                  return Divider(height: 10 );
-            },);
+              controller: scrollController,
+              itemCount: newsList.length,
+              itemBuilder: (context, index) {
+                return NewWidget(newsList[index]);
+              },
+              separatorBuilder: (BuildContext context, int index) {
+                return Divider(
+                  height: 10,
+                  color: Colors.transparent,
+                );
+              },
+            );
           } else {
             return Center(child: CircularProgressIndicator());
           }

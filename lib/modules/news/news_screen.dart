@@ -10,17 +10,17 @@ class NewsScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const SizedBox(
-              height: 37,
-            ),
             Stack(
-              children:  [
-                Image(image: AssetImage("assets/images/Group 1106.png")),
+              children: [
+                Image(
+                    height: MediaQuery.of(context).size.height * .25,
+                    width: double.infinity,
+                    image: AssetImage("assets/images/Group 1106.png")),
                 Padding(
-                  padding: EdgeInsets.all(13.0),
+                  padding: EdgeInsets.all(30.0),
                   child: Row(
                     children: [
-                      Text(
+                      const Text(
                         "News",
                         style: TextStyle(
                           color: Colors.white,
@@ -29,19 +29,22 @@ class NewsScreen extends StatelessWidget {
                         ),
                       ),
                       Spacer(),
-                      IconButton(onPressed: (){
-                        showSearch(context: context, delegate: NewsSearch());
-                      }, icon: Icon(Icons.search,size: 30,color: Colors.white,))
+                      IconButton(
+                          onPressed: () {
+                            showSearch(
+                                context: context, delegate: NewsSearch());
+                          },
+                          icon: const Icon(
+                            Icons.search,
+                            size: 30,
+                            color: Colors.white,
+                          ))
                     ],
                   ),
-
                 ),
-
-
               ],
             ),
             Expanded(child: TabsNews()),
-
           ],
         ),
       ),
