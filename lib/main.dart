@@ -6,12 +6,24 @@ import 'package:red_cell_app/modules/page_view/page%20view.dart';
 import 'package:red_cell_app/modules/signUp/second_sign_up_screen.dart';
 import 'package:red_cell_app/modules/signUp/signUp_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+
+
+import 'package:red_cell_app/modules/news/news_screen.dart';
 import 'modules/home/home_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+
+import 'package:red_cell_app/layout/redCell_layout.dart';
+
+
+
+
+void main() {
+
   runApp(const MyApp());
 }
 
@@ -25,14 +37,18 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(),
+      home:  MyHomePage(),
       debugShowCheckedModeBanner: false,
     );
   }
 }
 
+
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
+class MyHomePage extends StatelessWidget {
+
+
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -53,7 +69,13 @@ class _MyHomePageState extends State<MyHomePage> {
   }
   @override
   Widget build(BuildContext context) {
+
     return  swith == 0 ? page_view() : singUp();
+
+
+
+    return redCell_layout();
+
+
   }
 }
-//fire base setup
