@@ -5,6 +5,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:red_cell_app/modules/login/login.dart';
 import 'package:red_cell_app/modules/signUp/second_sign_up_screen.dart';
+//import 'package:google_sign_in/google_sign_in.dart';
 
 class singUp extends StatefulWidget {
   const singUp({Key? key}) : super(key: key);
@@ -13,22 +14,27 @@ class singUp extends StatefulWidget {
   State<singUp> createState() => _singUpState();
 }
 
-
-
 class _singUpState extends State<singUp> {
   var credential;
-  var txt='';
-  account(String email, String pass ,BuildContext context) async {
+  var user;
+  var txt = '';
+
+  account(String email, String pass, BuildContext context) async {
     try {
+      user = FirebaseAuth.instance.currentUser;
       credential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
         email: "${email}",
         password: "${pass}",
       );
       print(credential);
+      await user?.sendEmailVerification();
       Navigator.of(context).push(MaterialPageRoute(
         builder: (context) => second_sign_up_screen(
-            username: con1.text, email: con2.text, password: con3.text),
+            username: con1.text, email: con2.text, password: con3.text)
       ));
+      setState(() {
+        txt = '';
+      });
       print("/////////////////////////////////////");
     } on FirebaseAuthException catch (e) {
       if (e.code == 'weak-password') {
@@ -43,9 +49,10 @@ class _singUpState extends State<singUp> {
         });
       }
     } catch (e) {
-    print(e);
+      print(e);
     }
   }
+
   @override
   bool visabletext = true;
   var con1 = TextEditingController();
@@ -53,7 +60,6 @@ class _singUpState extends State<singUp> {
   var con3 = TextEditingController();
 
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
@@ -124,7 +130,10 @@ class _singUpState extends State<singUp> {
               height: 50,
             ),
             /////////////////////////////////////////////////////////notifyrd///////////////////////////////////////////////////
-            Center(child: Text("${txt}",style: TextStyle(color: Color.fromARGB(1000, 226, 78, 90))),),
+            Center(
+              child: Text("${txt}",
+                  style: TextStyle(color: Color.fromARGB(1000, 226, 78, 90))),
+            ),
             SizedBox(
               height: 50,
             ),
@@ -175,7 +184,7 @@ class _singUpState extends State<singUp> {
             backgroundColor:
                 MaterialStateProperty.all(Color.fromARGB(1000, 226, 78, 90))),
         onPressed: () {
-          account(con2.text, con3.text,context);
+          account(con2.text, con3.text, context);
         },
         child: Text(
           "continue",
@@ -190,7 +199,25 @@ class _singUpState extends State<singUp> {
       String name, double a, double b, double c, double d, Color color) {
     return Expanded(
         child: ElevatedButton(
-      onPressed: () {},
+      onPressed: () async {
+        print("yossef");
+        /*Future<UserCredential> signInWithGoogle() async {
+          // Trigger the authentication flow
+          final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+
+          // Obtain the auth details from the request
+          final GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
+
+          // Create a new credential
+          final credential = GoogleAuthProvider.credential(
+            accessToken: googleAuth?.accessToken,
+            idToken: googleAuth?.idToken,
+          );
+
+          // Once signed in, return the UserCredential
+          return await FirebaseAuth.instance.signInWithCredential(credential);
+        }*/
+      },
       child: Text("${name}",
           style: TextStyle(
               fontSize: 20, fontWeight: FontWeight.w600, color: color)),
